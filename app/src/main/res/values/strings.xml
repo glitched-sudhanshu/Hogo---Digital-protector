@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Digital Teacher</string>
+
+    <string name="website_prompt">Choose a website</string>
+
+    <string-array name="Porn_websites">
+        <item>Google</item>
+        <item>Redtube</item>
+        <item>Pornhub</item>
+        <item>Youporn</item>
+        <item>Xhamster</item>
+        <item>Xvideos</item>
+        <item>xnxx</item>
+    </string-array>
+</resources>
