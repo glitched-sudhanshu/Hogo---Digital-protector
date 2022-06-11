@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PasswordStrengthActivity">
-
+    tools:context=".PiracyProtectionActivity">
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline5"
         android:layout_width="wrap_content"
@@ -32,22 +31,22 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="70dp"
-        android:text="Enter your password:"
+        android:text="Enter website:"
         android:textColor="#000000"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtHeadingPwStrength" />
+        app:layout_constraintTop_toBottomOf="@+id/txtSecureSit" />
 
     <EditText
-        android:id="@+id/editTxtPw"
+        android:id="@+id/editTxtWeb"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="24dp"
         android:ems="10"
-        android:hint="Password"
+        android:hint="Website"
         android:inputType="textPassword"
         android:minHeight="48dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -56,20 +55,20 @@
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
     <Button
-        android:id="@+id/btnCheckPw"
+        android:id="@+id/btnCheckWeb"
         style="@style/Widget.MaterialComponents.Button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:backgroundTint="#552C6E"
         android:text="Check"
-        app:layout_constraintBottom_toTopOf="@+id/txtResultPw"
+        app:layout_constraintBottom_toTopOf="@+id/txtResultWe"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtPw"
+        app:layout_constraintTop_toBottomOf="@+id/editTxtWeb"
         app:layout_constraintVertical_bias="0.24000001" />
 
     <TextView
-        android:id="@+id/txtResultPw"
+        android:id="@+id/txtResultWe"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Results"
@@ -80,26 +79,37 @@
         app:layout_constraintBottom_toTopOf="@+id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTxtPw"
+        app:layout_constraintTop_toBottomOf="@+id/editTxtWeb"
         app:layout_constraintVertical_bias="1.0" />
 
     <ImageView
-        android:id="@+id/imgResultPw"
+        android:id="@+id/imgSafeLin"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="50dp"
         android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtResultPw"
+        app:layout_constraintTop_toBottomOf="@+id/txtResultWe"
         app:srcCompat="@drawable/thumbs_up_icon" />
 
+    <ImageView
+        android:id="@+id/imgYesPiracy"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="50dp"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtResultWe"
+        app:srcCompat="@drawable/bad_password_icon" />
+
     <TextView
-        android:id="@+id/txtPwResult"
+        android:id="@+id/txtPiracyResult"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="50dp"
         android:text="TextView"
         android:textColor="#212121"
         android:textSize="16sp"
@@ -107,10 +117,10 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgResultPw" />
+        app:layout_constraintTop_toBottomOf="@+id/imgYesPiracy" />
 
     <TextView
-        android:id="@+id/txtPwTip"
+        android:id="@+id/txtPiracyTip"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -123,14 +133,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPwResult" />
+        app:layout_constraintTop_toBottomOf="@+id/txtPiracyResult" />
 
     <TextView
-        android:id="@+id/txtHeadingPwStrength"
+        android:id="@+id/txtSecureSit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Password Strength"
+        android:text="Piracy Protection"
         android:textColor="#000000"
         android:textSize="24sp"
         android:textStyle="bold"

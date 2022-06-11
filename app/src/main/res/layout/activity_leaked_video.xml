@@ -27,6 +27,20 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <ImageView
+        android:id="@+id/imgSiteLogo"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:minWidth="50dp"
+        android:minHeight="50dp"
+        android:scaleType="fitCenter"
+        android:visibility="visible"
+        app:layout_constraintBottom_toTopOf="@+id/btnWebsite"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/spinner"
+        app:srcCompat="@drawable/google_logo" />
+
     <TextView
         android:id="@+id/txtDisclaimer"
         android:layout_width="0dp"
