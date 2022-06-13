@@ -9,6 +9,8 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+
+//password strength activity
 public class PasswordStrengthActivity extends AppCompatActivity {
 
     private EditText editTxtPw;
