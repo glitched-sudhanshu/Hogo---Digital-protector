@@ -13,10 +13,10 @@ import android.widget.TextView;
 //password strength activity
 public class PasswordStrengthActivity extends AppCompatActivity {
 
-    private EditText editTxtPw;
-    private TextView txtResultPw, txtPwTip, txtPwResult;
-    private ImageView imgResultPw;
-    private Button btnCheckPw;
+    private EditText editTxtPassword;
+    private TextView txtPwResult, txtPwTip, txtResults;
+    private ImageView imgBadPw, imgModeratePw, imgGoodPw;
+    private Button btnCheck;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +27,7 @@ public class PasswordStrengthActivity extends AppCompatActivity {
         initViews();
 
         //button listener
-        btnCheckPw.setOnClickListener(view -> {
+        btnCheck.setOnClickListener(view -> {
             checkPassword();
         });
 
@@ -35,10 +35,12 @@ public class PasswordStrengthActivity extends AppCompatActivity {
 
     //checking password
     void checkPassword(){
-        txtResultPw.setVisibility(View.VISIBLE);
-        String userPw = editTxtPw.getText().toString();
-        editTxtPw.setText("");
-        imgResultPw.setVisibility(View.INVISIBLE);
+        txtResults.setVisibility(View.VISIBLE);
+        String userPw = editTxtPassword.getText().toString();
+        editTxtPassword.setText("");
+        imgModeratePw.setVisibility(View.INVISIBLE);
+        imgBadPw.setVisibility(View.INVISIBLE);
+        imgGoodPw.setVisibility(View.INVISIBLE);
 
         int length = userPw.length();
 
@@ -65,32 +67,28 @@ public class PasswordStrengthActivity extends AppCompatActivity {
         if (length<=8 && length>=6 && containsLowerCaseLetter && containsNum && containsUpperCaseLetter && containsSpecialChar){
             txtPwResult.setText("Your password is moderate. Add more characters to make it strong.");
             txtPwResult.setVisibility(View.VISIBLE);
-            imgResultPw.setVisibility(View.VISIBLE);
-            imgResultPw.setImageResource(R.drawable.thumbs_up_icon);
+            imgModeratePw.setVisibility(View.VISIBLE);
             txtPwTip.setText("Tip:\n\nDo not set the same password on multiple accounts/sites.");
             txtPwTip.setVisibility(View.VISIBLE);
         }
         else if (length>=6 && containsLowerCaseLetter && containsNum && containsUpperCaseLetter && !containsSpecialChar){
             txtPwResult.setText("Your password is moderate. Add some special characters to make it strong.");
             txtPwResult.setVisibility(View.VISIBLE);
-            imgResultPw.setVisibility(View.VISIBLE);
-            imgResultPw.setImageResource(R.drawable.thumbs_up_icon);
+            imgModeratePw.setVisibility(View.VISIBLE);
             txtPwTip.setText("Tip:\n\nDo not store your passwords on apps which are not encrypted.");
             txtPwTip.setVisibility(View.VISIBLE);
         }
         else if (length>8 && containsLowerCaseLetter && containsNum && containsUpperCaseLetter && containsSpecialChar){
             txtPwResult.setText("You are safe. Your password is very strong.");
             txtPwResult.setVisibility(View.VISIBLE);
-            imgResultPw.setVisibility(View.VISIBLE);
-            imgResultPw.setImageResource(R.drawable.thumbs_up_icon);
+            imgGoodPw.setVisibility(View.VISIBLE);
             txtPwTip.setText("Tip:\n\nChange your password on regular intervals.");
             txtPwTip.setVisibility(View.VISIBLE);
         }
         else if (length<6){
             txtPwResult.setText("Your password is too weak. Add more numeric, letters or special characters to make it strong.");
             txtPwResult.setVisibility(View.VISIBLE);
-            imgResultPw.setVisibility(View.VISIBLE);
-            imgResultPw.setImageResource(R.drawable.bad_password_icon);
+            imgBadPw.setVisibility(View.VISIBLE);
             txtPwTip.setText("Do not share your passwords with anyone!");
             txtPwTip.setVisibility(View.VISIBLE);
 
@@ -98,11 +96,13 @@ public class PasswordStrengthActivity extends AppCompatActivity {
     }
 
     private void initViews() {
-        editTxtPw = findViewById(R.id.editTxtPw);
-        txtResultPw = findViewById(R.id.txtResultPw);
-        txtPwTip = findViewById(R.id.txtPwTip);
-        imgResultPw = findViewById(R.id.imgResultPw);
-        btnCheckPw = findViewById(R.id.btnCheckPw);
+        editTxtPassword = findViewById(R.id.editTxtPassword);
         txtPwResult = findViewById(R.id.txtPwResult);
+        txtPwTip = findViewById(R.id.txtPwTip);
+        imgBadPw = findViewById(R.id.imgBadPw);
+        imgModeratePw = findViewById(R.id.imgModeratePw);
+        imgGoodPw = findViewById(R.id.imgGoodPw);
+        btnCheck = findViewById(R.id.btnCheck);
+        txtResults = findViewById(R.id.txtResults);
     }
 }
